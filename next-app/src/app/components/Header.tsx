@@ -6,7 +6,7 @@ const Header = () => (
       <Link href="/">Pants Index</Link>
     </h1>
     <nav className="flex text-2xl space-x-4 mr-10">
-      {/* <Link className="px-3" href="/blog">
+      <Link className="px-3" href="/blog">
         Blog
       </Link>
       <Link className="px-3" href="/find">
@@ -14,7 +14,7 @@ const Header = () => (
       </Link>
       <Link className="px-3" href="/filter">
         Filter
-      </Link> */}
+      </Link>
     </nav>
   </header>
 );
