@@ -9,8 +9,6 @@ export default function Home() {
     <main>
       <Header />
       <h1 className='pt-32'>Hello World</h1>
-
-    
       <Link href='/users'>Users</Link>
       <ProductCard />
       <Footer />
