@@ -1,18 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ProductCard from './components/ProductCard';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PantsContent from './components/PantsContent';
 
-export default function Home() {
+
+export default async function Home() {
   return (
     <main>
       <Header />
-      <h1 className='pt-32'>Hello World</h1>
-
-    
-      <Link href='/users'>Users</Link>
-      <ProductCard />
+      <PantsContent />
       <Footer />
     </main>
   )
