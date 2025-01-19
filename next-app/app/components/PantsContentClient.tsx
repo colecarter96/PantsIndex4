@@ -1,8 +1,10 @@
+// PantsContentClient.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import FilterPanel from './FilterPanel';
 import PantsCard from './PantsCard';
+import { useFilters } from '@/context/FilterContext';  // Adjust path if needed
 
 interface Pant {
   _id: string;
@@ -21,23 +23,8 @@ interface Pant {
   Cover: string;
 }
 
-interface Filters {
-  rise: number[];
-  thigh: number[];
-  legOpening: number[];
-}
-
-interface PantsContentClientProps {
-  pants: Pant[];
-}
-
-const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants }) => {
-  console.log(pants)
-  const [filters, setFilters] = useState<Filters>({
-    rise: [5, 20],
-    thigh: [5, 20],
-    legOpening: [5, 20],
-  });
+const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
+  const { filters } = useFilters();  // Get filters from context
 
   const filterRanges = {
     rise: { min: 5, max: 20, step: 0.1 },
@@ -51,7 +38,6 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants }) => {
     const thigh = parseFloat(pant.Thigh); // Convert Thigh to a number
     const legOpening = parseFloat(pant["Leg Opening"]); // Convert LegOpening to a number
 
-    console.log(rise, thigh, legOpening); 
     return (
       rise >= filters.rise[0] &&
       rise <= filters.rise[1] &&
@@ -66,15 +52,12 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants }) => {
     <main className="flex">
       <div className="pt-20 w-1/6">
         <FilterPanel
-          filters={filters}
-          setFilters={setFilters}
           server={false}
           filterRanges={filterRanges}
         />
       </div>
 
       <div className="w-5/6 grid gap-6 pt-20 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        
         {filteredPants.length > 0 ? (
           filteredPants.map((pant: Pant) => (
             <PantsCard

@@ -1,20 +1,11 @@
+// FilterPanel.tsx
 'use client';
 
 import React from 'react';
 import RangeSlider from './RangeSlider';
+import { useFilters } from '@/context/FilterContext';  // Adjust the path if needed
 
-// Define the FilterPanel props type
 interface FilterPanelProps {
-  filters: {
-    rise: number[];
-    thigh: number[];
-    legOpening: number[];
-  };
-  setFilters: React.Dispatch<React.SetStateAction<{
-    rise: number[];
-    thigh: number[];
-    legOpening: number[];
-  }>>;
   server: boolean;
   filterRanges: {
     rise: { min: number; max: number; step: number };
@@ -23,7 +14,9 @@ interface FilterPanelProps {
   };
 }
 
-const FilterPanel: React.FC<FilterPanelProps> = ({ filters, setFilters, server, filterRanges }) => {
+const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
+  const { filters, setFilters } = useFilters();  // Access the filter state from context
+
   // Function to handle changes in the rise range
   const handleRiseChange = (values: number[]) => {
     setFilters((prevFilters) => ({ ...prevFilters, rise: values }));

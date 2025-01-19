@@ -17,10 +17,10 @@ interface Pant {
     "Leg Opening": string;  // Allow property with space
     Price: string;
     Cover: string;
-  }
+}
 
 async function getPants(): Promise<Pant[]> {
-  const response = await fetch('http://localhost:3000/api');
+  const response = await fetch('http://localhost:3000/api/pants');
   if (!response.ok) {
     throw new Error('Failed to fetch pants data');
   }
