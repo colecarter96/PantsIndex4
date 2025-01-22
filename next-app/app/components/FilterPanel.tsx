@@ -32,8 +32,16 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
     setFilters((prevFilters) => ({ ...prevFilters, legOpening: values }));
   };
 
+  const resetFilters = () => {
+    setFilters({
+      rise: [filterRanges.rise.min, filterRanges.rise.max],
+      thigh: [filterRanges.thigh.min, filterRanges.thigh.max],
+      legOpening: [filterRanges.legOpening.min, filterRanges.legOpening.max],
+    });
+  };
+
   return (
-    <div className="p-4 border-r border-gray-300 w-64">
+    <div className="p-4 w-64">
       <h2 className="text-lg font-bold mb-4">Filters</h2>
 
       {/* Rise filter */}
@@ -71,6 +79,13 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
           onChange={handleLegOpeningChange}
         />
       </div>
+
+      <button
+        className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300"
+        onClick={resetFilters}
+      >
+        Reset Filters
+      </button>
     </div>
   );
 };
