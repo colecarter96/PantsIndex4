@@ -1,7 +1,7 @@
 // PantsContentClient.tsx
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import FilterPanel from './FilterPanel';
 import PantsCard from './PantsCard';
 import { useFilters } from '@/context/FilterContext';  // Adjust path if needed
@@ -24,7 +24,10 @@ interface Pant {
 }
 
 const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // State for filter panel visibility
   const { filters } = useFilters();  // Get filters from context
+
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   const filterRanges = {
     rise: { min: 5, max: 20, step: 0.1 },
@@ -54,6 +57,8 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
         <FilterPanel
           server={false}
           filterRanges={filterRanges}
+          isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
         />
       </div>
 
