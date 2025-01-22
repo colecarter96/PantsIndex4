@@ -1,4 +1,3 @@
-// PantsContentClient.tsx
 'use client';
 
 import React, { useState } from 'react';
@@ -40,6 +39,15 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
     const rise = parseFloat(pant.Rise); // Convert Rise to a number
     const thigh = parseFloat(pant.Thigh); // Convert Thigh to a number
     const legOpening = parseFloat(pant["Leg Opening"]); // Convert LegOpening to a number
+
+    // Check if filters are available and valid
+    if (
+      !filters.rise || filters.rise.length < 2 ||
+      !filters.thigh || filters.thigh.length < 2 ||
+      !filters.legOpening || filters.legOpening.length < 2
+    ) {
+      return true; // Return all pants if filters are invalid or not yet set
+    }
 
     return (
       rise >= filters.rise[0] &&

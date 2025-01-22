@@ -1,23 +1,19 @@
-// FilterPanel.tsx
 'use client';
 
 import React, { useState } from 'react';
 import RangeSlider from './RangeSlider';
 import { useFilters } from '@/context/FilterContext'; // Adjust the path if needed
-import FilterButton from './FilterButton';
+import FilterButton from './FilterButton'; // Adjust the path if needed
 
 interface FilterPanelProps {
-  server: boolean;
   filterRanges: {
     rise: { min: number; max: number; step: number };
     thigh: { min: number; max: number; step: number };
     legOpening: { min: number; max: number; step: number };
   };
-  isMenuOpen: boolean;
-  toggleMenu: () => void;
 }
 
-const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
+const FilterPanel: React.FC<FilterPanelProps> = ({ filterRanges }) => {
   const { filters, setFilters } = useFilters(); // Access the filter state from context
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
 
@@ -48,14 +44,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
   return (
     <>
-      {/* Hamburger Button (only visible on small screens) */}
-      {/* <button
-        className="fixed top-4 right-4 z-20 p-2 bg-gray-800 text-white rounded md:hidden"
-        onClick={toggleMenu}
-      >
-        {isMenuOpen ? 'Close' : 'Filters'}
-      </button> */}
-
+      {/* Add the FilterButton here */}
       <FilterButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
       {/* Sliding Filter Panel (mobile/tablet) */}
