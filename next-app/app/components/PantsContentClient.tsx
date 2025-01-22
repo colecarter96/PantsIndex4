@@ -50,7 +50,7 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
 
   return (
     <main className="flex">
-      <div className="pt-20 w-1/6">
+      <div className=" flex pt-20 w-1/6">
         <FilterPanel
           server={false}
           filterRanges={filterRanges}
