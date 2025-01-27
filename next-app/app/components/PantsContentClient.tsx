@@ -10,7 +10,7 @@ interface Pant {
   _id: string;
   ID: string;
   Brand: string;
-  ModelName: string;
+  "Model Name": string;
   Type: string;
   ListedSize: string;
   Waist: string;  // Waist is also a string here
@@ -21,6 +21,7 @@ interface Pant {
   "Leg Opening": string;  // Allow property with space
   Price: string;
   Cover: string;
+  Hover: string;
 }
 
 const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
@@ -52,8 +53,10 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
   });
 
   return (
-    <main className="flex">
-      <div className=" flex pt-20 w-1/6">
+    <main className="lg:flex  md:flex sm:flex xs:flex">
+      {/* <div className=" flex pt-20 w-1/6 lg:w-1/6 md:w-0 sm:w-0 "> */}
+      <div className="pt-20 hidden lg:flex lg:w-1/6">
+      {/* <div className='hidden'> */}
         <FilterPanel
           server={false}
           filterRanges={filterRanges}
@@ -62,16 +65,18 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
         />
       </div>
 
-      <div className="w-5/6 grid gap-6 pt-20 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      {/* <div className="w-5/6 grid gap-6 pt-24 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"> */}
+      <div className="grid pt-24 gap-0 gap-y-3 w-full grid-cols-2 xl:grid-cols-3 lg:w-5/6 lg:gap-6 lg:grid-cols-2 md:w-full md:grid-cols-2 md:gap-5 sm:w-full sm:grid-cols-2 sm:gap-0   ">
         {filteredPants.length > 0 ? (
           filteredPants.map((pant: Pant) => (
-            <PantsCard
+            <PantsCard 
               key={pant._id}
               _id={pant._id}
-              modelName={pant.ModelName}
+              modelName={pant["Model Name"]}
               brand={pant.Brand}
               price={pant.Price}
               cover={pant.Cover}
+              hover={pant.Hover}
             />
           ))
         ) : (
