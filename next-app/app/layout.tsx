@@ -36,12 +36,13 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import { FilterProvider } from "@/context/FilterContext"; // Import the filter context
 import { FilterPanelProvider } from "@/context/FilterPanelContext"; // Import the filter panel context
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My App",
-  description: "My cool app description",
+  title: "Pants Index",
+  description: "Pants Based on Measurements",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <FilterProvider>
           <FilterPanelProvider>
             {children}
+            <Analytics />
           </FilterPanelProvider>
         </FilterProvider>
       </body>
