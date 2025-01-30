@@ -6,7 +6,7 @@ interface Pant {
     _id: string;
     ID: string;
     Brand: string;
-    ModelName: string;
+    "Model Name": string;
     Type: string;
     ListedSize: string;
     Waist: string;  // Waist is also a string here
@@ -17,6 +17,7 @@ interface Pant {
     "Leg Opening": string;  // Allow property with space
     Price: string;
     Cover: string;
+    Hover: string;
 }
 
 async function getPants(): Promise<Pant[]> {
