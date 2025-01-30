@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main>
       <Header />
-      <PantsContentServer />
+      {/* <PantsContentServer /> */}
       <Footer />
     </main>
   )
