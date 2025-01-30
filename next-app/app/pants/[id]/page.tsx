@@ -97,6 +97,8 @@ interface Pant {
   Hover: string;
 }
 
+const API_URL = process.env.PRODUCTION_API;
+
 const PantsDetailsPage = () => {
   const { id } = useParams(); // Retrieve the dynamic ID from the route
   const [pants, setPants] = useState<Pant | null>(null); // Fixed type to `Pant`
@@ -106,7 +108,7 @@ const PantsDetailsPage = () => {
   useEffect(() => {
     const fetchPantsData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/pants/${id}`, {
+        const res = await fetch(`${API_URL}api/pants/${id}`, {
           cache: "no-store",
         });
 
