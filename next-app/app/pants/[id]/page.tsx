@@ -108,7 +108,7 @@ const PantsDetailsPage = () => {
   useEffect(() => {
     const fetchPantsData = async () => {
       try {
-        const res = await fetch(`${API_URL}api/pants/${id}`, {
+        const res = await fetch(`${API_URL}/api/pants/${id}`, {
           cache: "no-store",
         });
 
