@@ -103,7 +103,9 @@ interface Pant {
 const API_URL = process.env.PRODUCTION_API;
 
 const PantsDetailsPage = () => {
-  const { id } = useParams(); // Retrieve the dynamic ID from the route
+  // const { id } = useParams(); // Retrieve the dynamic ID from the route
+  const params = useParams();
+  const id = typeof params.id === 'string' ? params.id : '';
   const [pants, setPants] = useState<Pant | null>(null); // Fixed type to `Pant`
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -112,7 +114,7 @@ const PantsDetailsPage = () => {
     const fetchPantsData = async () => {
       console.log(`Fetching URL: ${API_URL}/api/pants/${id}`);
       try {
-        const res = await fetch(`${API_URL}/api/pants/${id}`, {
+        const res = await fetch(`${API_URL}/api/pants/${encodeURIComponent(id)}`, {
           cache: "no-store",
         });
 
