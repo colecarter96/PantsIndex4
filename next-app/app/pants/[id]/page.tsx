@@ -114,7 +114,7 @@ const PantsDetailsPage = () => {
     const fetchPantsData = async () => {
       console.log(`Fetching URL: ${API_URL}/api/pants/${id}`);
       try {
-        const res = await fetch(`${API_URL}/api/pants/${encodeURIComponent(id)}`, {
+        const res = await fetch(`/api/pants/${id}`, {
           cache: "no-store",
         });
 
