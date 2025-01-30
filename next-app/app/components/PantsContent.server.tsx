@@ -32,9 +32,13 @@ async function getPants(): Promise<Pant[]> {
 }
 
 const PantsContentServer: React.FC = async () => {
-  const pants = await getPants(); // Fetch data on the server
+  // const pants = await getPants(); // Fetch data on the server
 
-  return <PantsContentClient pants={pants} />;
+  // return <PantsContentClient pants={pants} />;
+  return(
+
+    <div>hi</div>
+  );
 };
 
 export default PantsContentServer;
