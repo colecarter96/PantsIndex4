@@ -166,7 +166,7 @@
 // FilterPanel.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RangeSlider from './RangeSlider';
 import { useFilters } from '@/context/FilterContext'; // Adjust the path if needed
 import { useFilterPanel } from '@/context/FilterPanelContext';
@@ -206,11 +206,20 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
   // Reset filters to default
   const resetFilters = () => {
     setFilters({
-      rise: [filterRanges.rise.min, filterRanges.rise.max],
-      thigh: [filterRanges.thigh.min, filterRanges.thigh.max],
-      legOpening: [filterRanges.legOpening.min, filterRanges.legOpening.max],
+      rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 1],
+      thigh: [filterRanges.thigh.min + 1, filterRanges.thigh.max - 1],
+      legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 1],
     });
   };
+
+ 
+  // setFilters({
+  //   rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 1],
+  //   thigh: [filterRanges.thigh.min + 1, filterRanges.thigh.max - 1],
+  //   legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 1],
+  // });
+    
+  
 
   return (
     <>
@@ -230,7 +239,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
         
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 text-sm font-medium">Rise</h3>
+            <h3 className="ml-2 pb-2 text-sm font-medium">Rise</h3>
             <RangeSlider
               min={filterRanges.rise.min}
               max={filterRanges.rise.max}
@@ -243,7 +252,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 text-sm font-medium">Thigh</h3>
+            <h3 className="ml-2 pb-2 text-sm font-medium">Thigh</h3>
             <RangeSlider
               min={filterRanges.thigh.min}
               max={filterRanges.thigh.max}
@@ -257,7 +266,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 text-sm font-medium">Leg Opening</h3>
+            <h3 className="ml-2 pb-2 text-sm font-medium">Leg Opening</h3>
             <RangeSlider
               min={filterRanges.legOpening.min}
               max={filterRanges.legOpening.max}
