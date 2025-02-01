@@ -166,7 +166,7 @@
 // FilterPanel.tsx
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useRef} from 'react';
 import RangeSlider from './RangeSlider';
 import { useFilters } from '@/context/FilterContext'; // Adjust the path if needed
 import { useFilterPanel } from '@/context/FilterPanelContext';
@@ -190,6 +190,17 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
   // Function to toggle the menu
   // const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
+
+  // useEffect(() => {
+  //   // Check if it's the first load (not refreshed)
+  //   if (sessionStorage.getItem('hasLoaded') === null) {
+  //     console.log('Page first load');  // This should log once on the first load
+
+  //     // Set the flag to indicate the page has loaded
+  //     sessionStorage.setItem('hasLoaded', 'true');
+  //   }
+  // }, []); //
+  
   // Handlers for slider changes
   const handleRiseChange = (values: number[]) => {
     setFilters((prevFilters) => ({ ...prevFilters, rise: values }));
@@ -203,14 +214,18 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
     setFilters((prevFilters) => ({ ...prevFilters, legOpening: values }));
   };
 
+  
   // Reset filters to default
   const resetFilters = () => {
     setFilters({
-      rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 1],
-      thigh: [filterRanges.thigh.min + 1, filterRanges.thigh.max - 1],
-      legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 1],
+      rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 6],
+      thigh: [filterRanges.thigh.min + 2, filterRanges.thigh.max - 2],
+      legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 3],
     });
   };
+
+
+  
 
  
   // setFilters({
@@ -218,6 +233,22 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
   //   thigh: [filterRanges.thigh.min + 1, filterRanges.thigh.max - 1],
   //   legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 1],
   // });
+
+  
+
+  // const isInitialized = useRef(false);
+
+  // useEffect(() => {
+  //   if (!isInitialized.current && filterRanges && Object.keys(filterRanges).length > 0) {
+  //     setFilters({
+  //       rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 6],
+  //       thigh: [filterRanges.thigh.min + 2, filterRanges.thigh.max - 2],
+  //       legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 3],
+  //     });
+
+  //     isInitialized.current = true;
+  //   }
+  // }, [filterRanges, setFilters]); // Only re-run if `filterRanges` changes from undefined to a valid object
     
   
 
@@ -239,7 +270,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
         
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-sm font-medium">Rise</h3>
+            <h3 className="ml-2 pb-2 text-base font-medium">Rise</h3>
             <RangeSlider
               min={filterRanges.rise.min}
               max={filterRanges.rise.max}
@@ -252,7 +283,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-sm font-medium">Thigh</h3>
+            <h3 className="ml-2 pb-2 text-base font-medium">Thigh</h3>
             <RangeSlider
               min={filterRanges.thigh.min}
               max={filterRanges.thigh.max}
@@ -266,7 +297,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-sm font-medium">Leg Opening</h3>
+            <h3 className="ml-2 pb-2 text-base font-medium">Leg Opening</h3>
             <RangeSlider
               min={filterRanges.legOpening.min}
               max={filterRanges.legOpening.max}
