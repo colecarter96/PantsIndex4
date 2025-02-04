@@ -218,9 +218,9 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
   // Reset filters to default
   const resetFilters = () => {
     setFilters({
-      rise: [filterRanges.rise.min + 1, filterRanges.rise.max - 6],
-      thigh: [filterRanges.thigh.min + 2, filterRanges.thigh.max - 2],
-      legOpening: [filterRanges.legOpening.min + 1, filterRanges.legOpening.max - 3],
+      rise: [filterRanges.rise.min , filterRanges.rise.max],
+      thigh: [filterRanges.thigh.min, filterRanges.thigh.max],
+      legOpening: [filterRanges.legOpening.min, filterRanges.legOpening.max],
     });
   };
 

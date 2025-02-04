@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = () => (
     <h2 className="text-3xl font-medium">
       <Link href="/">Pants Index</Link>
     </h2>
-    <div className="lg:hidden">
+    <div className="lg:hidden items-center p-1 justify-between">
       <HamburgerMenu />  {/* Place the HamburgerMenu component */}
     </div>
   </header>
