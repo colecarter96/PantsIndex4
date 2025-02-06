@@ -265,12 +265,12 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
       {/* Static Sidebar for larger screens */}
       <div className="block p-4 w-full">
-        <h2 className="text-lg font-bold mb-4">Filters</h2>
+        <h2 className="text-xl text-center font-semibold mb-4">Measurements (in)</h2>
 
         
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-base font-medium">Rise</h3>
+            <h3 className="ml-2 pb-2 text-lg font-medium">Rise</h3>
             <RangeSlider
               min={filterRanges.rise.min}
               max={filterRanges.rise.max}
@@ -283,7 +283,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-base font-medium">Thigh</h3>
+            <h3 className="ml-2 pb-2 text-lg font-medium">Thigh</h3>
             <RangeSlider
               min={filterRanges.thigh.min}
               max={filterRanges.thigh.max}
@@ -297,7 +297,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         <div className="w-4/6 mb-6 flex justify-center lg:w-full mx-auto">
           <div className="w-full">
-            <h3 className="ml-2 pb-2 text-base font-medium">Leg Opening</h3>
+            <h3 className="ml-2 pb-2 text-lg font-medium">Leg Opening</h3>
             <RangeSlider
               min={filterRanges.legOpening.min}
               max={filterRanges.legOpening.max}
@@ -309,7 +309,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
         </div>
 
         <button
-          className="bg-gray-200 flex mx-auto justify-center w-5/6 text-black px-4 py-2 rounded hover:bg-gray-300 lg:w-full"
+          className="flex bg-gray-100 lg:bg-white text-lg mx-auto justify-center w-5/6 text-black px-4 py-3 lg:py-2 rounded hover:bg-gray-300 lg:w-full"
           onClick={resetFilters}
         >
           Reset Filters

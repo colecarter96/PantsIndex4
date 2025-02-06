@@ -65,7 +65,7 @@ const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
         />
       </div>
       <div
-        className={`pt-28 center lg:hidden fixed top-0 right-0 w-5/6 h-full bg-white p-4 z-30 transition-transform ${
+        className={`pt-28 center lg:hidden fixed top-0 right-0 w-full h-full bg-white p-4 z-30 transition-transform ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

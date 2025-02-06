@@ -4,7 +4,9 @@
 import { useFilterPanel } from "@/context/FilterPanelContext";  // Correct hook
 
 export const HamburgerMenu = () => {
-  const { toggleFilterPanel } = useFilterPanel();  // Using the correct hook
+  const { isMenuOpen, toggleFilterPanel } = useFilterPanel();  // Using the correct hook
+
+  const textClass = isMenuOpen ? "text-red-600" : "";
 
   return (
     // <button
@@ -30,12 +32,11 @@ export const HamburgerMenu = () => {
     // </button>
 
     <button onClick={toggleFilterPanel} aria-label="Open filter menu">
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-        <line x1="1" y1="6" x2="21" y2="6" />
-        <line x1="1" y1="12" x2="21" y2="12" />
-        <line x1="1" y1="18" x2="21" y2="18" />
+      <svg className={`w-8 h-8 ${textClass}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+        <line x1="3" y1="8" x2="21" y2="8" />
+    <line x1="3" y1="16" x2="21" y2="16" />
       </svg>
     </button>
-
+    
   );
 };
