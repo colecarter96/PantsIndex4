@@ -6,7 +6,6 @@ import FilterPanel from './FilterPanel';
 import PantsCard from './PantsCard';
 import { useFilters } from '@/context/FilterContext';  // Adjust path if needed
 import { useFilterPanel } from '@/context/FilterPanelContext';
-import { usePantsStore } from '../store/pantsStore';
 
 interface Pant {
   _id: string;
