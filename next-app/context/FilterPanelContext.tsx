@@ -21,6 +21,8 @@ export const FilterPanelProvider = ({ children }: { children: ReactNode }) => {
     setIsMenuOpen(prev => !prev);
   };
 
+  
+
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);

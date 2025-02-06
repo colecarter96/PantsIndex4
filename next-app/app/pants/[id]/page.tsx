@@ -144,12 +144,12 @@ const PantsDetailsPage = () => {
     <>
     <Header />
       <div className="flex flex-col items-center justify-center w-full pt-20 lg:w-3/4 mx-auto p-8">
-        <div className="flex flex-col lg:flex-row gap-8 w-full bg-gray-50 shadow-md rounded-lg p-8">
+        <div className="flex flex-col lg:flex-row gap-8 w-full rounded-lg p-8">
           {/* Left Section: Photo Carousel */}
           <PhotoCarousel images={[pants.Cover, pants.Hover]} modelName={pants["Model Name"]} />
 
           {/* Right Section: Pants Details */}
-          <div className="flex-1">
+          <div className="flex-1 ">
             <h1 className="text-3xl font-bold mb-4">{pants["Model Name"]}</h1>
             <p className="text-gray-700 text-lg mb-2">
               <strong>Brand:</strong> {pants.Brand}
@@ -188,11 +188,11 @@ const PhotoCarousel = ({ images, modelName }: { images: string[]; modelName: str
   };
 
   return (
-    <div className="relative flex justify-center items-center w-full lg:w-1/2 aspect-[3/4] bg-gray-100 rounded-md overflow-hidden">
+    <div className="relative flex justify-center items-center w-full lg:w-1/2 aspect-[3/4]  rounded-md overflow-hidden">
       {/* Left Arrow */}
       <button
         onClick={handlePrev}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 p-2 font-extrabold text-2xl"
       >
         ←
       </button>
@@ -207,7 +207,7 @@ const PhotoCarousel = ({ images, modelName }: { images: string[]; modelName: str
       {/* Right Arrow */}
       <button
         onClick={handleNext}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 py-4 font-extrabold text-2xl"
       >
         →
       </button>

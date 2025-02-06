@@ -38,8 +38,16 @@ import { FilterProvider } from "@/context/FilterContext"; // Import the filter c
 import { FilterPanelProvider } from "@/context/FilterPanelContext"; // Import the filter panel context
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from '@vercel/speed-insights/next';  
+import { Fraunces } from 'next/font/google';
+import { DM_Serif_Text } from  'next/font/google'
+import { Mulish } from 'next/font/google';
+import { Schibsted_Grotesk } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const didactGothic = Fraunces({ weight: '500', subsets: ['latin'] });
+const DMSerif = DM_Serif_Text({ weight: '400', subsets: ['latin'] });
+const Muli = Mulish({ weight: '700', subsets: ['latin'] });
+const SG = Schibsted_Grotesk({ weight: '500', subsets: ['latin']})
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Pants Index",
@@ -49,7 +57,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={SG.className}>
         {/* Wrap children in both providers */}
         <FilterProvider>
           <FilterPanelProvider>

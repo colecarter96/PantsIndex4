@@ -20,7 +20,10 @@ interface Pant {
     Hover: string;
 }
 
-const API_URL = process.env.PRODUCTION_API;
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? process.env.DEV_API
+    : process.env.PRODUCTION_API;
 
 async function getPants(): Promise<Pant[]> {
   const response = await fetch(`${API_URL}/api/pants`);
