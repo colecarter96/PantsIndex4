@@ -1,7 +1,7 @@
 // PantsContentClient.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FilterPanel from './FilterPanel';
 import PantsCard from './PantsCard';
 import { useFilters } from '@/context/FilterContext';  // Adjust path if needed
@@ -25,32 +25,37 @@ interface Pant {
   Hover: string;
 }
 
-const PantsContentClient: React.FC<{ pants: Pant[] }> = ({ pants }) => {
-  const { isMenuOpen, toggleMenu } = useFilterPanel(); // State for hamburger menu
-  const { filters } = useFilters();  // Get filters from context
+interface PantsContentClientProps {
+  pants: Pant[];
+}
 
+const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) => {
+  const [isClient, setIsClient] = useState(false);
+  const { isMenuOpen, toggleMenu } = useFilterPanel();
+  const { filters } = useFilters();
 
-  const filterRanges = {
-    rise: { min: 5, max: 20, step: 0.1 },
-    thigh: { min: 5, max: 20, step: 0.1 },
-    legOpening: { min: 5, max: 20, step: 0.1 },
-  };
+  useEffect(() => {
+    setIsClient(true);
+    console.log("HI CHAT");
+  }, []);
+
+  const filterRanges = { rise: { min: 5, max: 20, step: 0.1 }, thigh: { min: 5, max: 20, step: 0.1 }, legOpening: { min: 5, max: 20, step: 0.1 } };
 
   const filteredPants = pants.filter((pant) => {
-    // Ensure values are treated as numbers for comparison
-    const rise = parseFloat(pant.Rise); // Convert Rise to a number
-    const thigh = parseFloat(pant.Thigh); // Convert Thigh to a number
-    const legOpening = parseFloat(pant["Leg Opening"]); // Convert LegOpening to a number
+    if (!filters.rise || !filters.thigh || !filters.legOpening) return true;
+
+    const rise = parseFloat(pant.Rise) || 0;
+    const thigh = parseFloat(pant.Thigh) || 0;
+    const legOpening = parseFloat(pant["Leg Opening"]) || 0;
 
     return (
-      rise >= filters.rise[0] &&
-      rise <= filters.rise[1] &&
-      thigh >= filters.thigh[0] &&
-      thigh <= filters.thigh[1] &&
-      legOpening >= filters.legOpening[0] &&
-      legOpening <= filters.legOpening[1]
+      rise >= filters.rise[0] && rise <= filters.rise[1] &&
+      thigh >= filters.thigh[0] && thigh <= filters.thigh[1] &&
+      legOpening >= filters.legOpening[0] && legOpening <= filters.legOpening[1]
     );
   });
+
+  if (!isClient) return null; // Prevents hydration mismatches
 
   return (
     <main className="lg:flex  md:flex sm:flex xs:flex">

@@ -8,9 +8,9 @@ import PantsContentServer from './components/PantsContent.server';
 export default async function Home() {
   return (
     <main>
-      <Header />
-      <PantsContentServer />
-      <Footer />
+       <Header />
+       <PantsContentServer />
+       <Footer />
     </main>
   )
 }

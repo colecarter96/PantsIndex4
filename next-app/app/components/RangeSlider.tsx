@@ -105,7 +105,8 @@ const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, step, values, onCha
             <div
                 {...thumbProps}
                 key={key}
-                className="w-2 h-5 bg-slate-950 rounded-md shadow-md cursor-pointer"
+                className="w-4 h-7 lg:w-2 lg:h-5 bg-slate-950 rounded-md shadow-md cursor-pointer"
+                // w-2 h-5
             />
             );
         }}
