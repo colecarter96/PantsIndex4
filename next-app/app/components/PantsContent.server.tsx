@@ -25,17 +25,15 @@ const API_URL =
     ? process.env.DEV_API
     : process.env.PRODUCTION_API;
 
-async function getPants(): Promise<Pant[]> {
+async function getPants() {
   const response = await fetch(`${API_URL}/api/pants`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch pants data');
-  }
-  
+  if (!response.ok) throw new Error("Failed to fetch pants data");
   return response.json();
 }
 
 const PantsContentServer: React.FC = async () => {
   const pants = await getPants(); // Fetch data on the server
+  
 
   return <PantsContentClient pants={pants} />;
   
