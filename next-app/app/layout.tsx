@@ -52,6 +52,9 @@ const SG = Schibsted_Grotesk({ weight: '500', subsets: ['latin']})
 export const metadata = {
   title: "Pants Index",
   description: "Pants Based on Measurements",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
