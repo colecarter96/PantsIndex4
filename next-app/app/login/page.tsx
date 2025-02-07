@@ -11,10 +11,14 @@ const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Check password (set in environment variables for security)
-    if (password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-      document.cookie = `auth-token=${password}; path=/; max-age=86400`; // Store token for 1 day
-      router.push("/admin/pants");
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+
+    if (response.ok) {
+      router.push("/admin");
     } else {
       setError("Incorrect password");
     }

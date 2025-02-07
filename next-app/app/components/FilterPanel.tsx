@@ -153,9 +153,12 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         
 
-        {/* <h1 className="flex lg:hidden justify-center text-xl pt-20 hover:text-red-600 cursor-pointer">
-          <Link href="/submit-pants">CONTRIBUTE</Link>
-        </h1> */}
+        
+
+        <h1 className="flex lg:hidden justify-center bg-gray-100 text-xl mx-auto font-semibold mt-20 w-5/6 rounded hover:text-red-600 cursor-pointer py-6">
+          <Link href="/submit-pants">Contribute</Link>
+          
+        </h1>
       </div>
 
       

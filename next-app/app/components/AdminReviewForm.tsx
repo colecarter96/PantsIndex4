@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 type Pants = {
   _id: string;
@@ -77,49 +79,54 @@ const AdminReviewForm = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-5 pt-40">
-      <h1 className="text-2xl font-bold mb-4">Admin Review - Edit & Submit</h1>
-      {status && <p className="text-red-500">{status}</p>}
-      {pendingPants.length === 0 ? (
-        <p>No pending submissions.</p>
-      ) : (
-        <div className="space-y-6">
-          {pendingPants.map((pants) => (
-            <div key={pants._id} className="border p-4 rounded-md shadow">
-              <h2 className="text-lg font-bold">Edit Pants Entry</h2>
-              <div className="grid gap-2">
-                {Object.keys(pants).map((key) =>
-                  key !== "_id" ? (
-                    <input
-                      key={key}
-                      type="text"
-                      name={key}
-                      value={pants[key as keyof Pants]}
-                      onChange={(e) => handleChange(pants._id, key as keyof Pants, e.target.value)}
-                      placeholder={key}
-                      className="border p-2 rounded-md w-full"
-                    />
-                  ) : null
-                )}
+    <>
+      <Header />
+      <div className="max-w-2xl mx-auto p-5 pt-10">
+            <h1 className="text-2xl font-bold mb-4">Admin Review - Edit & Submit</h1>
+            {status && <p className="text-red-500">{status}</p>}
+            {pendingPants.length === 0 ? (
+              <p>No pending submissions.</p>
+            ) : (
+              <div className="space-y-6">
+                {pendingPants.map((pants) => (
+                  <div key={pants._id} className="border p-4 rounded-md shadow">
+                    <h2 className="text-lg font-bold">Edit Pants Entry</h2>
+                    <div className="grid gap-2">
+                      {Object.keys(pants).map((key) =>
+                        key !== "_id" ? (
+                          <input
+                            key={key}
+                            type="text"
+                            name={key}
+                            value={pants[key as keyof Pants]}
+                            onChange={(e) => handleChange(pants._id, key as keyof Pants, e.target.value)}
+                            placeholder={key}
+                            className="border p-2 rounded-md w-full"
+                          />
+                        ) : null
+                      )}
+                    </div>
+                    <button
+                      className="bg-blue-500 text-white px-3 py-2 mt-2 rounded-md w-full"
+                      onClick={() => submitEditedPants(pants)}
+                    >
+                      Submit to Database
+                    </button>
+                    <button
+                      className="bg-red-500 text-white px-3 py-2 mt-2 rounded-md w-full"
+                      onClick={() => deletePants(pants._id)}
+                      >
+                      Delete
+                      </button>
+                  </div>
+                  
+                ))}
               </div>
-              <button
-                className="bg-blue-500 text-white px-3 py-2 mt-2 rounded-md w-full"
-                onClick={() => submitEditedPants(pants)}
-              >
-                Submit to Database
-              </button>
-              <button
-                className="bg-red-500 text-white px-3 py-2 mt-2 rounded-md w-full"
-                onClick={() => deletePants(pants._id)}
-                >
-                Delete
-                </button>
-            </div>
-            
-          ))}
-        </div>
-      )}
-    </div>
+            )}
+          </div>
+          <Footer />
+    </>
+    
   );
 };
 

@@ -60,7 +60,7 @@ const AdminPants = () => {
   return (
     <>
         <Header />
-        <div className="max-w-lg mx-auto p-5 pt-40">
+        <div className="max-w-lg mx-auto p-5 pt-10">
             <h1 className="text-2xl font-bold mb-4">Add Pants</h1>
             <form onSubmit={handleSubmit} className="grid gap-4">
                 <input type="text" name="Brand" value={form.Brand} onChange={handleChange} placeholder="Brand" className="border p-2 rounded-md" />

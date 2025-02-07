@@ -9,11 +9,12 @@ const AdminDashboard = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"submit" | "review">("submit");
 
-  const handleLogout = () => {
-    document.cookie = "token=; Max-Age=0; path=/";
-    router.push("/login");
+  const handleLogout = async () => {
+    await fetch("/api/logout", {
+      method: "POST",
+    });
+    router.push("/"); // Redirects to home page after logout
   };
-
   return (
     <div className="max-w-2xl mx-auto p-5 pt-40">
       <div className="flex justify-between items-center mb-4">

@@ -8,7 +8,11 @@ const Modal = ({ onClose }: { onClose: () => void }) => {
       <div className="bg-white p-6 rounded-lg max-w-md shadow-lg">
         <h2 className="text-xl font-bold mb-2">Before You Submit</h2>
         <p className="mb-4">
-          Please ensure all measurements and details are accurate (in inches). Submissions will be reviewed before being added.
+          Please ensure all measurements and details are accurate (in inches). If you can't find a measurement, please put -1. 
+        </p>
+
+        <p className="mb-4">
+        Submissions will be reviewed before being added.
         </p>
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-md"
