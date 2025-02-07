@@ -33,7 +33,7 @@ async function getPants() {
 
 const PantsContentServer: React.FC = async () => {
   const pants = await getPants(); // Fetch data on the server
-  
+  console.log(pants);
 
   return <PantsContentClient pants={pants} />;
   

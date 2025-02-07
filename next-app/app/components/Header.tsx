@@ -14,6 +14,9 @@ const Header: React.FC<HeaderProps> = () => (
       <h2 className={`text-3xl lg:text-4xl font-extrabold hover:text-red-600 ${GH.className}`}>
         <Link href="/">PANTS INDEX</Link>
       </h2>
+      <h1 className="hidden lg:block absolute right-7 text-lg hover:text-red-600 cursor-pointer">
+        BLOG
+      </h1>
       <div className="lg:hidden items-center p-1 justify-between">
         <HamburgerMenu />  {/* Place the HamburgerMenu component */}
       </div>
