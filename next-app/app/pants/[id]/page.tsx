@@ -149,17 +149,16 @@ import Footer from "@/app/components/Footer";
 
 interface Pant {
   _id: string;
-  ID: string;
   Brand: string;
-  "Model Name": string;
+  ModelName: string;
   Type: string;
   ListedSize: string;
-  Waist: string;
-  Inseam: string;
-  Rise: string;
-  Thigh: string;
+  Waist: string;  // Waist is also a string here
+  Inseam: string; // Inseam is also a string here
+  Rise: string;   // Rise is a string
+  Thigh: string;  // Thigh is a string
   Knee: string;
-  "Leg Opening": string;
+  LegOpening: string;  // Allow property with space
   Price: string;
   Cover: string;
   Hover: string;
@@ -205,11 +204,11 @@ const PantsDetailsPage = () => {
       <div className="flex flex-col items-center justify-center w-full pt-20 lg:w-3/4 mx-auto p-8">
         <div className="flex flex-col lg:flex-row gap-8 w-full rounded-lg p-8">
           {/* Left Section: Photo Carousel */}
-          {pants && <PhotoCarousel images={[pants.Cover, pants.Hover]} modelName={pants["Model Name"]} />}
+          {pants && <PhotoCarousel images={[pants.Cover, pants.Hover]} modelName={pants.ModelName} />}
 
           {/* Right Section: Pants Details */}
           <div className="flex-1 ">
-            <h1 className="text-3xl font-bold mb-4">{pants ? pants["Model Name"] : "Loading..."}</h1>
+            <h1 className="text-3xl font-bold mb-4">{pants ? pants.ModelName : "Loading..."}</h1>
             {error ? (
               <p className="text-red-500 text-lg">{error}</p>
             ) : (
@@ -228,7 +227,7 @@ const PantsDetailsPage = () => {
                   <li><strong>Rise:</strong> {pants ? pants.Rise : ""}</li>
                   <li><strong>Thigh:</strong> {pants ? pants.Thigh : ""}</li>
                   <li><strong>Knee:</strong> {pants ? pants.Knee : ""}</li>
-                  <li><strong>Leg Opening:</strong> {pants ? pants["Leg Opening"] : ""}</li>
+                  <li><strong>Leg Opening:</strong> {pants ? pants.LegOpening : ""}</li>
                 </ul>
               </>
             )}

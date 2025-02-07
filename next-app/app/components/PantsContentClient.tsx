@@ -9,9 +9,8 @@ import { useFilterPanel } from '@/context/FilterPanelContext';
 
 interface Pant {
   _id: string;
-  ID: string;
   Brand: string;
-  "Model Name": string;
+  ModelName: string;
   Type: string;
   ListedSize: string;
   Waist: string;  // Waist is also a string here
@@ -19,7 +18,7 @@ interface Pant {
   Rise: string;   // Rise is a string
   Thigh: string;  // Thigh is a string
   Knee: string;
-  "Leg Opening": string;  // Allow property with space
+  LegOpening: string;  // Allow property with space
   Price: string;
   Cover: string;
   Hover: string;
@@ -36,7 +35,6 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
 
   useEffect(() => {
     setIsClient(true);
-    console.log("HI CHAT");
   }, []);
 
   const filterRanges = { rise: { min: 5, max: 20, step: 0.1 }, thigh: { min: 5, max: 20, step: 0.1 }, legOpening: { min: 5, max: 20, step: 0.1 } };
@@ -46,7 +44,7 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
 
     const rise = parseFloat(pant.Rise) || 0;
     const thigh = parseFloat(pant.Thigh) || 0;
-    const legOpening = parseFloat(pant["Leg Opening"]) || 0;
+    const legOpening = parseFloat(pant.LegOpening) || 0;
 
     return (
       rise >= filters.rise[0] && rise <= filters.rise[1] &&
@@ -89,7 +87,7 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
             <PantsCard 
               key={pant._id}
               _id={pant._id}
-              modelName={pant["Model Name"]}
+              modelName={pant.ModelName}
               brand={pant.Brand}
               price={pant.Price}
               cover={pant.Cover}

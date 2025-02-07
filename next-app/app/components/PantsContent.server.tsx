@@ -4,9 +4,8 @@ import PantsContentClient from './PantsContentClient';
 
 interface Pant {
     _id: string;
-    ID: string;
     Brand: string;
-    "Model Name": string;
+    ModelName: string;
     Type: string;
     ListedSize: string;
     Waist: string;  // Waist is also a string here
@@ -14,7 +13,7 @@ interface Pant {
     Rise: string;   // Rise is a string
     Thigh: string;  // Thigh is a string
     Knee: string;
-    "Leg Opening": string;  // Allow property with space
+    LegOpening: string;  // Allow property with space
     Price: string;
     Cover: string;
     Hover: string;
