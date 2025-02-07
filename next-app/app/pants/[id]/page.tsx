@@ -222,6 +222,7 @@ const PantsDetailsPage = () => {
                 <p className="text-gray-600 text-lg mb-4">No additional details available.</p>
                 <h2 className="text-2xl font-semibold mb-2">Measurements</h2>
                 <ul className="text-gray-700 text-lg space-y-2">
+                  <li><strong>Listed Size:</strong> {pants ? pants.ListedSize : ""}</li>
                   <li><strong>Waist:</strong> {pants ? pants.Waist : ""}</li>
                   <li><strong>Inseam:</strong> {pants ? pants.Inseam : ""}</li>
                   <li><strong>Rise:</strong> {pants ? pants.Rise : ""}</li>
