@@ -209,7 +209,7 @@ const PantsDetailsPage = () => {
           {pants && <PhotoCarousel images={[pants.Cover, pants.Hover]} modelName={pants.ModelName} />}
 
           {/* Right Section: Pants Details */}
-          <div className="flex-1 lg:pt-7">
+          <div className="flex-1 lg:pt-10">
             <h1 className="text-3xl font-bold mb-4">{pants ? pants.ModelName : "Loading..."}</h1>
             {error ? (
               <p className="text-red-500 text-lg">{error}</p>

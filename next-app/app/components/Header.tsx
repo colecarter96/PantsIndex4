@@ -29,9 +29,9 @@ const Header: React.FC<HeaderProps> = () => (
       <h1 className="hidden lg:block absolute right-7 text-lg hover:text-red-600 cursor-pointer">
         <Link href="/submit-pants">Contribute</Link>
       </h1>
-      {/* <h1 className="hidden lg:block absolute right-36 text-lg hover:text-red-600 cursor-pointer">
+      <h1 className="hidden lg:block absolute right-36 text-lg hover:text-red-600 cursor-pointer">
         <Link href="/similar-pants">Find Simliar</Link>
-      </h1> */}
+      </h1>
       <div className="lg:hidden items-center p-1 justify-between">
         <HamburgerMenu />  {/* Place the HamburgerMenu component */}
       </div>
