@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import Modal from "./Modal";
 
 const SubmitPantsForm = () => {
   const [form, setForm] = useState({
@@ -22,6 +23,7 @@ const SubmitPantsForm = () => {
   });
 
   const [status, setStatus] = useState("");
+  const [showModal, setShowModal] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -63,21 +65,30 @@ const SubmitPantsForm = () => {
   return (
     <>
       <Header />
+      {showModal && <Modal onClose={() => setShowModal(false)} />}
       <div className="max-w-lg mx-auto p-5 pt-40">
         <h1 className="text-2xl font-bold mb-4">Submit Pants</h1>
         {status && <p className="text-sm mb-2">{status}</p>}
         <form onSubmit={handleSubmit} className="grid gap-4">
-          {Object.keys(form).map((key) => (
+        {Object.keys(form).map((key) => {
+          let placeholderText = key; // Default placeholder
+
+          // Custom placeholders for specific fields
+          if (key === "Cover") placeholderText = "Enter Cover Image Address";
+          if (key === "Hover") placeholderText = "Enter Hover Image Address";
+
+          return (
             <input
               key={key}
               type="text"
               name={key}
               value={form[key as keyof typeof form]}
               onChange={handleChange}
-              placeholder={key}
+              placeholder={placeholderText}
               className="border p-2 rounded-md"
             />
-          ))}
+          );
+        })}
           <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
             Submit
           </button>
