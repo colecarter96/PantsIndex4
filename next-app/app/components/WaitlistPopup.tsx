@@ -40,7 +40,7 @@ const WaitlistPopup = ({ onClose }: { onClose: () => void }) => {
                 >
                 x
                 </button>
-        </div>
+        </div> 
       
         <h2 className="text-xl font-bold mb-2">Welcome!</h2>
         <p className="mb-4">
