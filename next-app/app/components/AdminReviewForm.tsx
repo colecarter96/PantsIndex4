@@ -16,7 +16,7 @@ type Pants = {
   Thigh: string;
   Knee: string;
   LegOpening: string;
-  Price: string;
+  Price: string; 
   Cover: string;
   Hover: string;
 };
