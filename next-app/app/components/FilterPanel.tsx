@@ -21,7 +21,7 @@ interface FilterPanelProps {
 
 const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
   const { filters, setFilters } = useFilters(); // Access the filter state from context
-  const { isMenuOpen, toggleMenu } = useFilterPanel(); // State for hamburger menu
+  const { isMenuOpen, toggleFilterPanel } = useFilterPanel(); // State for hamburger menu
 
   // Function to toggle the menu
   // const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -155,10 +155,29 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
 
         
 
-        <h1 className="flex lg:hidden justify-center bg-gray-100 text-xl mx-auto font-semibold mt-20 w-5/6 rounded hover:text-red-600 cursor-pointer py-6">
+        <button 
+        className="flex lg:hidden justify-center bg-gray-100 text-xl mx-auto font-semibold mt-11 w-5/6 rounded  cursor-pointer py-6"
+        onClick={toggleFilterPanel}
+        >
           <Link href="/submit-pants">Contribute</Link>
           
-        </h1>
+        </button>
+
+        <button 
+        className="flex lg:hidden justify-center bg-gray-100 text-xl mx-auto font-semibold mt-11 w-5/6 rounded  cursor-pointer py-6"
+        onClick={toggleFilterPanel}
+        >
+          <Link href="/similar-pants">Find Similar</Link>
+          
+        </button>
+
+        <button 
+        className="flex lg:hidden justify-center bg-gray-100 text-xl mx-auto font-semibold mt-11 w-5/6 rounded  cursor-pointer py-6"
+        onClick={toggleFilterPanel}
+        >
+          <Link href="/contact">Contact</Link>
+          
+        </button>
       </div>
 
       
