@@ -25,7 +25,7 @@ const API_URL =
     : process.env.PRODUCTION_API;
 
 async function getPants() {
-  const response = await fetch(`${API_URL}/api/pants`);
+  const response = await fetch(`${API_URL}/api/pants`, { cache: "no-store" }); // Prevent caching
   if (!response.ok) throw new Error("Failed to fetch pants data");
   return response.json();
 }
