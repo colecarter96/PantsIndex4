@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = () => (
       </h1> */}
       
       <h1 className="hidden lg:block absolute left-7 text-lg hover:text-red-600 cursor-pointer">
-        <Link href="/similar-pants">Find Simliar</Link>
+        <Link href="/similar-pants">Find Similar</Link>
       </h1>
       <h1 className="hidden lg:block absolute right-32 text-lg hover:text-red-600 cursor-pointer">
         <Link href="/submit-pants">Contribute</Link>
