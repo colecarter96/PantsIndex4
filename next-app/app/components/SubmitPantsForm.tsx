@@ -66,7 +66,7 @@ const SubmitPantsForm = () => {
     <>
       <Header />
       {showModal && <Modal onClose={() => setShowModal(false)} />}
-      <div className="max-w-lg mx-auto p-5 pt-40">
+      <div className="font-tex-gyre-heros max-w-lg mx-auto p-5 pt-40">
         <h1 className="text-2xl font-bold mb-4">Submit Pants</h1>
         {status && <p className="text-sm mb-2">{status}</p>}
         <form onSubmit={handleSubmit} className="grid gap-4">
@@ -89,7 +89,7 @@ const SubmitPantsForm = () => {
             />
           );
         })}
-          <button type="submit" className="bg-blue-500 text-white p-2 rounded-md">
+          <button type="submit" className="bg-red-800 text-white p-2 rounded-md">
             Submit
           </button>
         </form>

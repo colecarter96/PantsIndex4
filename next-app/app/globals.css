@@ -15,7 +15,9 @@
 }
 
 
+
 body {
   color: black;
+  font-family: var(--font-tex-gyre-heros), sans-serif;
   /* padding: 1rem; */
 }

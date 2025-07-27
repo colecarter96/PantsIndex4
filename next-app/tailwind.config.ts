@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'tex-gyre-heros': ['var(--font-tex-gyre-heros)', 'sans-serif'],
+        'comico': ['var(--font-comico)', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

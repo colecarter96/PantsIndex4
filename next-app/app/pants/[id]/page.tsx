@@ -203,7 +203,7 @@ const PantsDetailsPage = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center justify-center w-full pt-20 lg:w-3/4 mx-auto p-8">
+      <div className="font-tex-gyre-heros flex flex-col items-center justify-center w-full pt-20 lg:w-3/4 mx-auto p-8">
         <div className="flex flex-col lg:flex-row gap-8 w-full rounded-lg p-8">
           {/* Left Section: Photo Carousel */}
           {pants && <PhotoCarousel images={[pants.Cover, pants.Hover]} modelName={pants.ModelName} />}
