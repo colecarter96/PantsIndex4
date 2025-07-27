@@ -145,7 +145,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
         </div>
 
         <button
-          className="flex bg-red-800 text-lg mx-auto justify-center w-5/6 text-slate-100 px-4 py-3 lg:py-2 rounded hover:bg-red-700 lg:w-full"
+          className="flex bg-red-800 text-lg mx-auto justify-center w-5/6 text-slate-100 px-4 py-3 lg:py-2 rounded hover:bg-red-7 00 lg:w-full"
           onClick={resetFilters}
         >
           Reset Filters

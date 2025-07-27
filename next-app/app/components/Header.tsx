@@ -35,13 +35,13 @@ const Header: React.FC<HeaderProps> = () => (
         BLOG
       </h1> */}
       
-      <h1 className="font-comico hidden lg:block absolute left-7 text-lg  lg:text-2xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-comico text-slate-100 hidden lg:block absolute left-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/similar-pants">Find Similar</Link>
       </h1>
-      <h1 className="font-comico hidden lg:block absolute right-36 lg:right-40 text-lg  lg:text-2xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-comico text-slate-100 hidden lg:block absolute right-36 lg:right-40 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/submit-pants">Contribute</Link>
       </h1>
-      <h1 className="font-comico hidden lg:block absolute right-7 text-lg  lg:text-2xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-comico text-slate-100 hidden lg:block absolute right-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/contact">Contact</Link>
       </h1>
       <div className="lg:hidden items-center p-1 justify-between">
