@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = () => (
           alt="Pants Index Logo" 
           width={120} 
           height={40} 
-          className="h-10 md:h-12 lg:h-12 xl:h-12  w-auto"
+          className="h-10 md:h-10 lg:h-10 xl:h-10  w-auto"
           priority
         />
       </Link>
