@@ -31,11 +31,11 @@ const WaitlistPopup = ({ onClose }: { onClose: () => void }) => {
     };
 
   return (
-    <div className="fixed mr-1 ml-1 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="font-tex-gyre-heros fixed mr-1 ml-1 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-6 rounded-lg max-w-md shadow-lg ">
         <div className="flex justify-end">
             <button
-                className="bg-red-600 text-white px-4 py-1 rounded-md text-lg"
+                className="bg-red-800 text-white px-4 py-1 rounded-md text-lg"
                 onClick={onClose}
                 >
                 x
@@ -56,7 +56,7 @@ const WaitlistPopup = ({ onClose }: { onClose: () => void }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     />
-                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded">
+                    <button type="submit" className="w-full bg-red-800 text-white py-2 rounded">
                     Submit
                     </button>
                     

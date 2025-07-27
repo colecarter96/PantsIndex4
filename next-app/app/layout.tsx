@@ -11,6 +11,7 @@ import { Fraunces } from 'next/font/google';
 import { DM_Serif_Text } from  'next/font/google'
 import { Mulish } from 'next/font/google';
 import { Schibsted_Grotesk } from "next/font/google";
+import { texGyreHeros, comico } from './fonts';
 
 const didactGothic = Fraunces({ weight: '500', subsets: ['latin'] });
 const DMSerif = DM_Serif_Text({ weight: '400', subsets: ['latin'] });
@@ -29,7 +30,23 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={SG.className}>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/TeXGyreHeros-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Comico-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={`${texGyreHeros.variable} ${comico.variable} ${SG.className}`}>
         {/* Wrap children in both providers */}
         <FilterProvider>
           <FilterPanelProvider>

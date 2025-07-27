@@ -35,7 +35,7 @@ export default function WaitlistPage() {
   return (
     <>
         <Header />
-        <div className="pt-32">
+        <div className="font-tex-gyre-heros pt-32">
             <div className="max-w-md mx-auto mt-10 mb-5 p-6 bg-white rounded-lg shadow-lg">
                 <h2 className="text-xl font-bold mb-4">Stay Up To Date</h2>
                 <form onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ export default function WaitlistPage() {
                     value={suggestion}
                     onChange={(e) => setSuggestion(e.target.value)}
                     />
-                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded">
+                    <button type="submit" className="w-full bg-red-800 text-white py-2 rounded">
                     Submit
                     </button>
                 </form>

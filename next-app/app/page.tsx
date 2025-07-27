@@ -7,7 +7,7 @@ import PantsContentServer from './components/PantsContent.server';
 
 export default async function Home() {
   return (
-    <main>
+    <main className="font-tex-gyre-heros">
        <Header />
        <PantsContentServer />
        <Footer />

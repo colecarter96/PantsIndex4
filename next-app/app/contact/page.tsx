@@ -88,7 +88,7 @@ export default function ContactForm() {
                 <button
                 type="submit"
                 disabled={loading}
-                className={`w-full p-2 rounded ${loading ? "bg-gray-400" : "bg-blue-600 text-white"}`}
+                className={`w-full p-2 rounded ${loading ? "bg-gray-400" : "bg-red-800 text-white"}`}
                 >
                 {loading ? "Sending..." : "Send"}
                 </button>

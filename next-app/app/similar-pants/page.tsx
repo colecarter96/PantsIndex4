@@ -119,7 +119,7 @@ export default function SimilarPantsPage() {
   return (
     <>
         <Header />
-        <div className="max-w-2xl mx-auto p-6 pt-40">
+        <div className="max-w-2xl mx-auto p-6 pt-40 font-tex-gyre-heros">
         <h1 className="text-3xl font-bold mb-4">Find Similar Pants</h1>
 
         {/* Pants selection dropdown */}
@@ -170,7 +170,7 @@ export default function SimilarPantsPage() {
         </div>
 
         <button
-            className="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+            className="mt-4 bg-red-800 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
             onClick={handleFindSimilar}
             disabled={loading}
         >
@@ -178,7 +178,7 @@ export default function SimilarPantsPage() {
         </button>
 
         <button
-            className="mt-4 bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 w-full"
+            className="mt-4 bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 w-full"
             onClick={handleReset}
             disabled={loading}
         >

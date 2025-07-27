@@ -73,7 +73,7 @@ interface RangeSliderProps {
 
 const RangeSlider: React.FC<RangeSliderProps> = ({ min, max, step, values, onChange }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="font-tex-gyre-heros flex flex-col items-center">
       <Range
         values={values}
         step={step}
