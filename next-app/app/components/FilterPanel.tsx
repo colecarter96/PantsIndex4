@@ -100,7 +100,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
       
 
       {/* Static Sidebar for larger screens */}
-      <div className="block p-4 w-full">
+      <div className="block p-4 w-full pb-10 md:pb-4">
         <h2 className="text-xl text-center font-semibold mb-4">Measurements (in)</h2>
 
         
