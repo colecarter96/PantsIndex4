@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface HeroProps {
   imageUrl?: string;
@@ -21,6 +21,15 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    // Calculate header height after component mounts
+    const header = document.querySelector('header');
+    if (header) {
+      setHeaderHeight(header.offsetHeight);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +55,13 @@ const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ height: '50vh', marginTop: 'calc(2.5rem + 2rem)' }}>
+    <div 
+      className="relative w-full overflow-hidden" 
+      style={{ 
+        height: '50vh', 
+        marginTop: headerHeight > 0 ? `${headerHeight}px` : '4.5rem'
+      }}
+    >
       {/* Background Image */}
       {/* <img 
         src={imageUrl} 
