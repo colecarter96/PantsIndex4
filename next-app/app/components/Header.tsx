@@ -15,10 +15,10 @@ const Header: React.FC<HeaderProps> = () => (
         <Link href="/waitlist">We are currently developing! Click here to stay up to date or hit us with sugggestions!</Link>
     </div> */}
 
-    <div className="flex md:hidden justify-center bg-red-800 text-slate-100 py-1">
+    <div className="flex md:hidden justify-center bg-slate-800 text-slate-100 py-1">
         <Link href="/waitlist">Click here to stay up to date or hit us with sugggestions!</Link>
     </div>
-    <div className="fixed shadow top-0 left-0 right-0 flex justify-between lg:justify-center items-center pt-3 pb-3 px-5 bg-red-700 z-50">
+    <div className="fixed shadow top-0 left-0 right-0 flex justify-between lg:justify-center items-center pt-3 pb-3 px-5 bg-zinc-900 z-50">
       
       
       <Link href="/" className="hover:opacity-80 transition-opacity">
@@ -35,13 +35,13 @@ const Header: React.FC<HeaderProps> = () => (
         BLOG
       </h1> */}
       
-      <h1 className="font-comico text-slate-100 hidden lg:block absolute left-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-tex-gyre-heros text-slate-100 hidden lg:block absolute left-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/similar-pants">Find Similar</Link>
       </h1>
-      <h1 className="font-comico text-slate-100 hidden lg:block absolute right-36 lg:right-40 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-tex-gyre-heros text-slate-100 hidden lg:block absolute right-36 lg:right-40 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/submit-pants">Contribute</Link>
       </h1>
-      <h1 className="font-comico text-slate-100 hidden lg:block absolute right-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
+      <h1 className="font-tex-gyre-heros text-slate-100 hidden lg:block absolute right-7 text-lg  lg:text-xl hover:text-red-800 cursor-pointer">
         <Link href="/contact">Contact</Link>
       </h1>
       <div className="lg:hidden items-center p-1 justify-between">
