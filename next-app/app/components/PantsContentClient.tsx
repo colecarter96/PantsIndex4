@@ -6,7 +6,7 @@ import FilterPanel from './FilterPanel';
 import PantsCard from './PantsCard';
 import { useFilters } from '@/context/FilterContext';  // Adjust path if needed
 import { useFilterPanel } from '@/context/FilterPanelContext';
-import WaitlistPopup from './WaitlistPopup';
+// import WaitlistPopup from './WaitlistPopup';
 
 interface Pant {
   _id: string;
@@ -33,7 +33,7 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
   const [isClient, setIsClient] = useState(false);
   const { isMenuOpen, toggleMenu } = useFilterPanel();
   const { filters } = useFilters();
-  const [showWaitlistPopup, setShowWaitlistPopup] = useState(true);
+  // const [showWaitlistPopup, setShowWaitlistPopup] = useState(true);
 
   useEffect(() => {
     setIsClient(true);
@@ -43,7 +43,7 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
     // if it's there it will be boolean true
     // setting the opposite to state, false for returning user, true for a new user
     console.log("HELLO DOWN THERE");
-    setShowWaitlistPopup(returningUser != "true");
+    // setShowWaitlistPopup(returningUser != "true");
   }, []);
 
   const filterRanges = { rise: { min: 5, max: 20, step: 0.1 }, thigh: { min: 5, max: 20, step: 0.1 }, legOpening: { min: 5, max: 20, step: 0.1 } };
@@ -62,19 +62,19 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
     );
   });
 
-  const closeWaitlistPopup = () => {
-    // setting key "seenPopUp" with value true into localStorage
-    localStorage.setItem("seenPopUp", "true");
-    // setting state to false to not display pop-up
-    setShowWaitlistPopup(false);
-  };
+  // const closeWaitlistPopup = () => {
+  //   // setting key "seenPopUp" with value true into localStorage
+  //   localStorage.setItem("seenPopUp", "true");
+  //   // setting state to false to not display pop-up
+  //   setShowWaitlistPopup(false);
+  // };
 
   if (!isClient) return null; // Prevents hydration mismatches
 
   return (
     <main className="lg:flex  md:flex sm:flex xs:flex">
       {/* <div className=" flex pt-20 w-1/6 lg:w-1/6 md:w-0 sm:w-0 "> */}
-      {showWaitlistPopup && <WaitlistPopup onClose={closeWaitlistPopup} />}
+      {/* {showWaitlistPopup && <WaitlistPopup onClose={closeWaitlistPopup} />} */}
       {/* {showWaitlistPopup && <WaitlistPopup onClose={() => setShowWaitlistPopup(false)} />} */}
       <div className="pt-44 ml-3 hidden lg:flex lg:w-1/6">
       {/* <div className='hidden'> */}
@@ -99,7 +99,7 @@ const PantsContentClient: React.FC<PantsContentClientProps> = ({ pants = [] }) =
       </div>
 
       {/* <div className="w-5/6 grid gap-6 pt-24 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"> */}
-      <div className="grid pt-36 gap-0 gap-y-3 w-full grid-cols-2 xl:grid-cols-3 lg:w-5/6 lg:gap-6 lg:grid-cols-2 md:w-full md:grid-cols-2 md:gap-5 sm:w-full sm:grid-cols-2 sm:gap-0">
+      <div className="grid pt-12 md:pt-36 gap-0 gap-y-3 w-full grid-cols-2 xl:grid-cols-3 lg:w-5/6 lg:gap-6 lg:grid-cols-2 md:w-full md:grid-cols-2 md:gap-5 sm:w-full sm:grid-cols-2 sm:gap-0">
         {filteredPants.length > 0 ? ( 
           filteredPants.map((pant: Pant) => (
             <PantsCard 
