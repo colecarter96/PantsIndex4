@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({
       <div className="absolute inset-0 bg-red-800 bg-opacity-100"></div>
       
       {/* Centered Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 pt-24">
         {/* Title */}
         {title && (
           <h1 className="font-comico text-4xl md:text-5xl mx-0 lg:mx-32 lg:text-6xl text-white text-center mb-4 drop-shadow-lg">
