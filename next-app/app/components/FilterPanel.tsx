@@ -100,7 +100,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
       
 
       {/* Static Sidebar for larger screens */}
-      <div className="block p-4 w-full pb-10 md:pb-4">
+      <div className="block p-4 w-full ">
         <h2 className="text-xl text-center font-semibold mb-4">Measurements (in)</h2>
 
         
@@ -154,7 +154,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
         
 
         
-
+      
         <button 
         className="flex lg:hidden justify-center bg-red-800 text-xl mx-auto font-semibold mt-11 w-5/6 rounded text-slate-100 cursor-pointer py-6"
         onClick={toggleFilterPanel}
@@ -178,6 +178,8 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ server, filterRanges }) => {
           <Link href="/contact">Contact</Link>
           
         </button>
+        
+        
       </div>
 
       
