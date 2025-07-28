@@ -50,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({
       className="relative w-full overflow-hidden" 
       style={{ 
         height: '50vh',
-        paddingTop: '4.5rem'
+        paddingTop: '5rem' // Increased to account for mobile banner
       }}
     >
       {/* Background Image */}
