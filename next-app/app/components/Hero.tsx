@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <div className="relative w-full overflow-hidden mt-16" style={{ height: '50vh' }}>
+    <div className="relative w-full overflow-hidden mt-14" style={{ height: '50vh' }}>
       {/* Background Image */}
       {/* <img 
         src={imageUrl} 
